@@ -6,10 +6,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.v1_21_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.loveroo.packetlistener.Events.PacketHandler;
 import io.netty.channel.Channel;
@@ -80,7 +78,7 @@ public class PacketListener extends JavaPlugin implements Listener {
         // return the channel
         return (Channel)_getINC.get(_nm);
     }
-
+    
     @Override
     public void onDisable() {
         // just in case the plugin is disabled while the server isn't stopped, unregister all players so our code stops running
