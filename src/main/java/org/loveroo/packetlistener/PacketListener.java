@@ -48,17 +48,6 @@ public class PacketListener extends JavaPlugin implements Listener {
             registerPlayer(_player);
         }
 
-        // BukkitRunnable run = new BukkitRunnable() {
-        //     @Override
-        //     public void run() {
-        //         for(Player _player : Bukkit.getOnlinePlayers()) {
-        //             _player.setSprinting(true);
-        //         }
-        //     }
-        // };
-
-        // run.runTaskTimer(this, 0, 1);
-
         getLogger().info("Listening to packets since 1987! [made by roo]");
     }
 
@@ -119,73 +108,4 @@ public class PacketListener extends JavaPlugin implements Listener {
             unregisterPlayer(_player);
         }
     }
-
-    // public void modifyServerPlayerPosition(PacketReceiveEvent event) {
-    //     // if the packet is not our desired packet type, we return
-    //     if(!(event.getPacket() instanceof ServerboundMovePlayerPacket packet))
-    //         return;
-      
-    //     try {
-    //       // we want to modify the x variable in this packet
-    //       Field setX = packet.getClass().getField("x");
-    //       setX.setAccessible(true); // allows this private final field to be accessible to us
-      
-    //       // set all player move packets to be offset by 1 on the x axis
-    //       setX.set(packet, packet.x + 1);
-    //     }
-    //     catch(Exception e) {
-    //       // in case our field doesn't exist, log it so we know
-    //       Bukkit.getLogger().log(Level.SEVERE, "Failed to modify `ServerboundMovePlayerPacket` packet! " + e);
-    //     }
-    //   }
-
-    // @EventHandler
-    // public void checkAdvancements(PacketReceiveEvent event) {
-    //     if(!(event.getPacket() instanceof ServerboundSeenAdvancementsPacket _packet)) {
-    //         return;
-    //     }
-
-    //     event.getPlayer().sendMessage("keybind!");
-
-    //     // ClientboundUpdateAdvancementsPacket updateAdvancements = new ClientboundUpdateAdvancementsPacket(true, List.of(), Set.of(), Map.of());
-    //     ClientboundContainerClosePacket close = new ClientboundContainerClosePacket(0);
-    //     ServerPlayer _sp = ((CraftPlayer)event.getPlayer()).getHandle();
-    //     _sp.connection.sendPacket(close);
-    //     // _sp.connection.sendPacket(updateAdvancements);
-    // }
-
-    // @EventHandler
-    // public void pickBlock(PacketReceiveEvent event) {
-    //     if(!(event.getPacket() instanceof ServerboundPickItemFromBlockPacket) && !(event.getPacket() instanceof ServerboundPickItemFromEntityPacket)) {
-    //         return;
-    //     }
-
-    //     if(event.getPlayer().isSneaking()) {
-    //         return;
-    //     }
-
-    //     event.getPlayer().sendMessage("keybind!");
-    //     event.setCancelled(true);
-    // }
-
-    // @EventHandler
-    // public void fuckThisShit(PacketReceiveEvent event) {
-    //     event.getPlayer().sendMessage("keybind!");
-    //     event.setCancelled(true);
-    // }
-
-    // @EventHandler
-    // public void checkSpint(PacketReceiveEvent event) {
-    //     if(!(event.getPacket() instanceof ServerboundPlayerInputPacket _packet)) {
-    //         return;
-    //     }
-
-    //     Bukkit.getLogger().info("" + _packet.input());
-
-    //     // ClientboundUpdateAdvancementsPacket updateAdvancements = new ClientboundUpdateAdvancementsPacket(true, List.of(), Set.of(), Map.of());
-    //     // if(_packet.input().sprint()) {
-    //     //     Bukkit.getLogger().info("activate");
-    //     // }
-    //     // _sp.connection.sendPacket(updateAdvancements);
-    // }
 }
