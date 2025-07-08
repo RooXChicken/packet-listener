@@ -32,6 +32,10 @@ public class PacketSendEvent extends PlayerEvent {
         return packet;
     }
 
+    public void setPacket(Object _packet) {
+        packet = _packet;
+    }
+
     public boolean isCancelled() {
         return isCancelled;
     }

@@ -28,7 +28,7 @@ public class PacketHandler extends ChannelDuplexHandler {
         if(_event.isCancelled())
             return;
 
-        super.channelRead(_context, _object);
+        super.channelRead(_context, _event.getPacket());
     }
 
     @Override
@@ -39,6 +39,6 @@ public class PacketHandler extends ChannelDuplexHandler {
         if(_event.isCancelled())
             return;
 
-        super.write(_ctx, _msg, _promise);
+        super.write(_ctx, _event.getPacket(), _promise);
     }
 }
